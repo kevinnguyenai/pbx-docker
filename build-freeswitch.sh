@@ -6,5 +6,5 @@ if [[ -z $1 ]]; then
 fi
 
 pushd freeswitch
-docker buildx build --platform ${PLATFORM} --push -t crazyquark/freeswitch .
+docker buildx build --platform ${PLATFORM} --push -t fgst/freeswitch:v1.10.5 .
 popd
