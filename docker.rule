@@ -40,3 +40,5 @@ sudo iptables -A DOCKER -s 20.110.145.242/32 -d 172.18.0.3/32 ! -i br-11d6a1d31d
 sudo iptables -A DOCKER -s 42.119.176.0/24 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5060 -j ACCEPT
 sudo iptables -A DOCKER -s 20.110.145.242/32 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5060 -j ACCEPT
 sudo iptables -A DOCKER -s 172.18.0.0/16 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5060 -j ACCEPT
+sudo iptables -A DOCKER -s 140.82.198.0/24 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5060 -j ACCEPT
+sudo iptables -A DOCKER -s 171.253.47.139/32 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5060 -j ACCEPT
