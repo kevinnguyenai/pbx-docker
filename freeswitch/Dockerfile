@@ -1,7 +1,7 @@
 FROM debian:bullseye
 LABEL maintainer = Cristian Sandu <cristian.sandu@gmail.com>
 
-ENV SWITCH_VER=1.10.5
+ENV SWITCH_VER=1.10.11
 
 # Install Required Dependencies
 RUN apt update \
