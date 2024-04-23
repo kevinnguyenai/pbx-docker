@@ -1,7 +1,7 @@
-FROM debian:bullseye
+FROM debian:bullseye-backports
 LABEL maintainer = Kevin Nguyen <kevin.nguyen.eng@gmail.com>
 
-ENV SWITCH_VER=1.10.3
+ENV SWITCH_VER=1.10.11
 
 # Install Required Dependencies
 RUN apt update \
