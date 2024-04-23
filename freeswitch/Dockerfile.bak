@@ -1,5 +1,5 @@
-FROM debian:bullseye
-LABEL maintainer = Kevin Nguyen <kevin.nguyen.eng@gmail.com>
+FROM debian:buster
+LABEL maintainer = Cristian Sandu <cristian.sandu@gmail.com>
 
 ENV SWITCH_VER=1.10.3
 
@@ -38,7 +38,6 @@ RUN apt update \
         netcat
 
 # Setup Freeswitch repo
-ARG FS_TOKEN=${FS_TOKEN}
 COPY ./add-freeswitch-repo.sh /usr/src/freeswitch/add-freeswitch-repo.sh
 RUN /usr/src/freeswitch/add-freeswitch-repo.sh
 

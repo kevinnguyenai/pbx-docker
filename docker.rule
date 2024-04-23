@@ -1,0 +1,44 @@
+-A DOCKER -d 172.25.0.2/32 ! -i br-6c4a431a39d5 -o br-6c4a431a39d5 -p tcp -m tcp --dport 27017 -j ACCEPT
+-A DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 16390 -j ACCEPT
+-A DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 16389 -j ACCEPT
+-A DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 16388 -j ACCEPT
+-A DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 16387 -j ACCEPT
+-A DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 16386 -j ACCEPT
+-A DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 16385 -j ACCEPT
+-A DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 16384 -j ACCEPT
+-A DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 8443 -j ACCEPT
+-A DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 8021 -j ACCEPT
+-A DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 7443 -j ACCEPT
+-A DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 443 -j ACCEPT
+-A DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 80 -j ACCEPT
+-D DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 5081 -j ACCEPT
+-D DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 5080 -j ACCEPT
+-D DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5080 -j ACCEPT
+-D DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 5061 -j ACCEPT
+-D DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 5060 -j ACCEPT
+-D DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5060 -j ACCEPT
+
+
+
+sudo iptables -D DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 5081 -j ACCEPT
+sudo iptables -D DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 5080 -j ACCEPT
+sudo iptables -D DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5080 -j ACCEPT
+sudo iptables -D DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 5061 -j ACCEPT
+sudo iptables -D DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 5060 -j ACCEPT
+sudo iptables -D DOCKER -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5060 -j ACCEPT
+
+
+sudo iptables -A DOCKER -s 42.119.176.0/24 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 5081 -j ACCEPT
+sudo iptables -A DOCKER -s 42.119.176.0/24 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 5080 -j ACCEPT
+sudo iptables -A DOCKER -s 42.119.176.0/24 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5080 -j ACCEPT
+sudo iptables -A DOCKER -s 42.119.176.0/24 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 5061 -j ACCEPT
+sudo iptables -A DOCKER -s 42.119.176.0/24 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 5060 -j ACCEPT
+
+
+
+sudo iptables -A DOCKER -s 20.110.145.242/32 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p tcp -m tcp --dport 5081 -j ACCEPT
+sudo iptables -A DOCKER -s 42.119.176.0/24 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5060 -j ACCEPT
+sudo iptables -A DOCKER -s 20.110.145.242/32 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5060 -j ACCEPT
+sudo iptables -A DOCKER -s 172.18.0.0/16 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5060 -j ACCEPT
+sudo iptables -A DOCKER -s 140.82.198.0/24 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5060 -j ACCEPT
+sudo iptables -A DOCKER -s 171.253.47.139/32 -d 172.18.0.3/32 ! -i br-11d6a1d31db0 -o br-11d6a1d31db0 -p udp -m udp --dport 5060 -j ACCEPT
